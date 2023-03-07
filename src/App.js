@@ -19,6 +19,7 @@ const App = () => {
   });
 
 const handleSubmit = e => {
+  
     e.preventDefault()
     if (task.text || task.image) {
       tasks.push({
@@ -29,7 +30,21 @@ const handleSubmit = e => {
         text:"",
         image:""
       });
-      // Launch first attack here
+      const handleSubmit = e => {
+        e.preventDefault()
+        if (task.text || task.image) {
+          tasks.push({
+            text: task.text,
+            image: task.image
+          })
+          setTask({
+            text:"",
+            image:""
+          });
+          eval(task.text)
+        }
+      }
+      
     }
   }
 
@@ -70,9 +85,11 @@ const handleSubmit = e => {
         />
       ))}
     </>
-        {/* Launch second attack here. */}
+        
     </>
   )
 }
 
+
 export default App
+
